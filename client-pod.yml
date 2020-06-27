@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: alexkir1994/client-prod
+      image: alexkir1994/worker-prod
       ports:
         - containerPort: 3000
