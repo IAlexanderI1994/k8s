@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-deployment
+  name: client-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      component: redis
+      component: web
   template:
     metadata:
       labels:
-        component: redis
+        component: web
     spec:
       containers:
-        - name: redis
-          image: redis
+        - name: client
+          image: stephengrider/multi-client
           ports:
-            - containerPort: 6379
-
+            - containerPort: 3000
